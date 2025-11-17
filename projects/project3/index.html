@@ -1,37 +1,14 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Campaign Micro Interaction Web</title>
-<link rel="stylesheet" href="../../assets/css/style.css"/>
-<style>body{padding:30px;background:#fff} #chart{width:90%;max-width:800px;margin:20px auto;height:360px;opacity:0.6;transition:opacity .4s}</style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Project</title>
+<link rel="stylesheet" href="../../assets/css/style.css" />
 </head>
-<body>
-<header class="site-header"><div class="wrap"><a class="brand" href="../../">SLG</a></div></header>
-<main>
-  <section style="padding:30px 20px;text-align:center;">
-    <h2>Campaign Micro Interactions</h2>
-    <p>IntersectionObserver 기반 마이크로 인터랙션과 차트 예시</p>
-    <div id="chart"></div>
-  </section>
-</main>
-<script src="https://code.highcharts.com/highcharts.js"></script>
-<script>
-document.addEventListener('DOMContentLoaded', function(){
-  Highcharts.chart('chart', {
-    title: { text: '참여자 수 (샘플 데이터)' },
-    xAxis: { categories: ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'] },
-    series: [{ name: '참여', data: [10, 15, 12, 20, 22, 18, 24] }]
-  });
-
-  const io = new IntersectionObserver((entries)=> {
-    entries.forEach(e=>{
-      if(e.isIntersecting) e.target.style.opacity=1;
-      else e.target.style.opacity=0.4;
-    });
-  }, {threshold:0.5});
-  io.observe(document.getElementById('chart'));
-});
-</script>
+<body style="text-align:center; padding:120px 20px;">
+<h1>Project Demo Page</h1>
+<p>이 페이지는 데모용이며 자유롭게 수정 가능합니다.</p>
 </body>
 </html>
