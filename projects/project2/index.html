@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>SVG Motion Gallery</title>
+<link rel="stylesheet" href="../../assets/css/style.css"/>
+<style>body{padding:40px;background:#fbfdff} svg{display:block;margin:0 auto}</style>
+</head>
+<body>
+<header class="site-header"><div class="wrap"><a class="brand" href="../../">SLG</a></div></header>
+<main>
+  <section style="text-align:center;padding:60px 20px;">
+    <h2>SVG Path Motion</h2>
+    <p>SVG stroke가 그려지는 기본 예시입니다.</p>
+    <svg id="svg" width="800" height="260" viewBox="0 0 800 260" xmlns="http://www.w3.org/2000/svg">
+      <path id="mypath" d="M40 130 C200 10, 600 250, 760 130" stroke="#0099FF" stroke-width="6" fill="none" stroke-linecap="round"/>
+    </svg>
+  </section>
+</main>
+<script>
+const path = document.getElementById('mypath');
+const length = path.getTotalLength();
+path.style.strokeDasharray = length;
+path.style.strokeDashoffset = length;
+let progress = 0;
+function draw(){
+  progress += 3;
+  if(progress>length) progress = length;
+  path.style.strokeDashoffset = length - progress;
+  if(progress<length) requestAnimationFrame(draw);
+}
+draw();
+</script>
+</body>
+</html>

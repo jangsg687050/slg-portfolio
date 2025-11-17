@@ -1,12 +1,24 @@
-# 프로젝트 패키지
+# SLG Portfolio — Light Minimal (Demo)
 
-## 프로젝트 목록
-- project1
-- project2
-- project3
+This is a ready-to-deploy static portfolio package (light, minimal, motion focused).
+It includes three demo projects and thumbnails. Replace placeholder content with your real work.
 
-## 소개
-라이트/심플 디자인 기반 웹 프로젝트 모음.
+## Structure
+- index.html
+- assets/
+  - css/style.css
+  - js/main.js
+  - img/thumb_project1.png (1500x1500)
+- projects/
+  - project1/ (GSAP ScrollTrigger demo)
+  - project2/ (SVG stroke animation)
+  - project3/ (Highcharts + IntersectionObserver demo)
 
-## 인터랙션
-ScrollTrigger 기반 고정 헤더 예제 포함.
+## Local preview
+Run a simple HTTP server in the folder:
+```
+python -m http.server 8000
+```
+Then open http://localhost:8000
+
+Contact: sg6870@naver.com
